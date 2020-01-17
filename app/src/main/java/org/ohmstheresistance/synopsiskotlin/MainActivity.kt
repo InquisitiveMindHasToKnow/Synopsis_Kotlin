@@ -1,12 +1,67 @@
 package org.ohmstheresistance.synopsiskotlin
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
+import android.graphics.drawable.ColorDrawable
+import android.os.Build
 import android.os.Bundle
+import android.view.View
+import android.widget.Button
+import androidx.appcompat.app.ActionBar
+import androidx.appcompat.app.AppCompatActivity
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity() , View.OnClickListener {
+
+    private var profileAboutMeButton: Button? = null
+    private var profileContactMeButton: Button? = null
+    private var profileProjectsButton: Button? = null
+    private var profileResumeButton: Button? = null
+    private var navigationIntent: Intent? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        val bar: ActionBar? = supportActionBar
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+            bar!!.setBackgroundDrawable(ColorDrawable(getColor(R.color.actionBarColorTest)))
+        }
+
+
+        profileAboutMeButton = findViewById(R.id.profile_about_me_button)
+        profileContactMeButton = findViewById(R.id.profile_contact_me_button)
+        profileProjectsButton = findViewById(R.id.profile_projects_button)
+        profileResumeButton = findViewById(R.id.profile_resume_button)
+
+        profileAboutMeButton!!.setOnClickListener(this)
+        profileContactMeButton!!.setOnClickListener(this)
+        profileProjectsButton!!.setOnClickListener(this)
+        profileResumeButton!!.setOnClickListener(this)
     }
+
+    override fun onClick(view: View?) {
+        val id: Int = view!!.getId()
+
+
+        when (id) {
+            R.id.profile_about_me_button -> {
+                navigationIntent = Intent(this@MainActivity, AboutMe::class.java)
+                startActivity(navigationIntent)
+            }
+            R.id.profile_contact_me_button -> {
+                navigationIntent = Intent(this@MainActivity, ContactMe::class.java)
+                startActivity(navigationIntent)
+            }
+            R.id.profile_projects_button -> {
+                navigationIntent = Intent(this@MainActivity, Projects::class.java)
+                startActivity(navigationIntent)
+            }
+            R.id.profile_resume_button -> {
+                navigationIntent = Intent(this@MainActivity, Resume::class.java)
+                startActivity(navigationIntent)
+            }
+        }
+    }
+
+
 }
