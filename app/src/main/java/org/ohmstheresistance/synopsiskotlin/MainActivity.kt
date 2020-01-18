@@ -11,13 +11,6 @@ import androidx.appcompat.app.AppCompatActivity
 
 class MainActivity : AppCompatActivity() , View.OnClickListener {
 
-    private var profileAboutMeButton: Button? = null
-    private var profileContactMeButton: Button? = null
-    private var profileProjectsButton: Button? = null
-    private var profileResumeButton: Button? = null
-    private var navigationIntent: Intent? = null
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -27,23 +20,22 @@ class MainActivity : AppCompatActivity() , View.OnClickListener {
             bar!!.setBackgroundDrawable(ColorDrawable(getColor(R.color.actionBarColorTest)))
         }
 
+        val profileAboutMeButton: Button = findViewById(R.id.profile_about_me_button)
+        val profileContactMeButton: Button = findViewById(R.id.profile_contact_me_button)
+        val profileProjectsButton: Button = findViewById(R.id.profile_projects_button)
+        val profileResumeButton: Button = findViewById(R.id.profile_resume_button)
 
-        profileAboutMeButton = findViewById(R.id.profile_about_me_button)
-        profileContactMeButton = findViewById(R.id.profile_contact_me_button)
-        profileProjectsButton = findViewById(R.id.profile_projects_button)
-        profileResumeButton = findViewById(R.id.profile_resume_button)
-
-        profileAboutMeButton!!.setOnClickListener(this)
-        profileContactMeButton!!.setOnClickListener(this)
-        profileProjectsButton!!.setOnClickListener(this)
-        profileResumeButton!!.setOnClickListener(this)
+        profileAboutMeButton.setOnClickListener(this)
+        profileContactMeButton.setOnClickListener(this)
+        profileProjectsButton.setOnClickListener(this)
+        profileResumeButton.setOnClickListener(this)
     }
 
     override fun onClick(view: View?) {
-        val id: Int = view!!.getId()
 
+        val navigationIntent: Intent
 
-        when (id) {
+        when (view!!.id) {
             R.id.profile_about_me_button -> {
                 navigationIntent = Intent(this@MainActivity, AboutMe::class.java)
                 startActivity(navigationIntent)
