@@ -6,99 +6,123 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/mainBackgroundColor">
+        android:background="@color/mainBackgroundColor"
+        tools:context=".activities.AboutMe">
 
-    <View
-        android:layout_width="412dp"
-        android:layout_height="160dp"
-        android:background="@color/mainViewColor"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="match_parent"
+        <View
+            android:layout_width="412dp"
             android:layout_height="160dp"
-            android:gravity="center"
-            android:textColor="@color/textColor"
-            android:text="Contact Me"
-            android:textSize="56sp" />
+            android:background="@color/mainViewColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <LinearLayout
-            android:id="@+id/ways_to_contact_linear"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:orientation="horizontal"
-            android:background="#FFF"
-            android:layout_marginTop="24dp"
-            android:padding="10dp" >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
 
-            <LinearLayout
+            <ViewFlipper
+                android:id="@+id/descriptive_words_view_flipper"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="160dp"
+                android:inAnimation="@android:anim/slide_in_left"
+                android:outAnimation="@android:anim/slide_out_right" />
 
-                <Button
-                    android:id="@+id/contact_me_phone_call_button"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/phonecall"/>
-
-
-                <Button
-                    android:id="@+id/contact_me_gmail_button"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginEnd="16dp"
-                    android:layout_marginStart="16dp"
-                    android:background="@drawable/gmail_icon"
-                    />
-
-
-            </LinearLayout>
-
-            <LinearLayout
+            <ScrollView
+                android:id="@+id/about_me_scrollview"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" >
+                android:layout_height="match_parent"
+                android:scrollbars="none">
 
-                <Button
-                    android:id="@+id/contact_me_github_button"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/github_logo"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:lineSpacingExtra="4dp"
+                        android:text="“I wanna be the very best that no one ever waaaas… ♫♪ ta na ta da ♫♪ …to write code is my real test, to test them is my caauuse! I’ll travel across the web, searching far and wiiiiide….to make effective methods, test and feeeaaatures to bring good apps to liiiifeee!!”"
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp" />
 
-                <Button
-                    android:id="@+id/contact_me_linked_in_button"
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginStart="16dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/linkedinlogo"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center_horizontal"
+                        android:text="*** Now that we've been informally introduced ***"
+                        android:textColor="@color/textColor"
+                        android:textSize="20sp"
+                        android:textStyle="bold" />
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="Are you looking for an Android Developer to join your development team? Look no further..."
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp" />
 
-            </LinearLayout>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:gravity="center"
+                        android:text="You're in the right place!"
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp"
+                        android:textStyle="bold|italic" />
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/profile_user_image_circular_imageview"
+                        android:layout_width="190dp"
+                        android:layout_height="181dp"
+                        android:layout_gravity="center_horizontal"
+                        android:src="@drawable/omar"
+                        app:civ_border_color="#FFF3D9"
+                        app:civ_border_width="4dp"
+                        app:civ_shadow="true"
+                        app:civ_shadow_radius="10" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:lineSpacingExtra="2dp"
+                        android:text="Based in Brooklyn, N.Y., I’m an Android Developer with experience in building, integrating, and testing applications on mobile and tablet devices. Fueled by a deep desire to learn, I create applications, to not only solve everyday problems, but to stay up to date in an ever evolving field of study all while striving to write efficient, maintainable, and reusable code."
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:lineSpacingExtra="2dp"
+                        android:text="How will I be an asset to the team?"
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp"
+                        android:textStyle="italic" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:lineSpacingExtra="2dp"
+                        android:text="By far, I believe my biggest attribute is that I'm coachable. I will relentlessly give 110% effort to ensure that all tasks I’m assigned are completed properly and on time. I listen attentively to constructive criticism, speak candidly and will admit mistakes, take responsibility for them and use them as opportunities to grow. In short, my commitment to the success of the team is paramount. "
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp" />
+
+                </LinearLayout>
+            </ScrollView>
 
         </LinearLayout>
 
-        <ImageView
-            android:id="@+id/contact_me_android_robot"
-            android:layout_width="160dp"
-            android:layout_height="224dp"
-            android:src="@drawable/droid"
-            android:layout_gravity="center_horizontal"/>
-
-    </LinearLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

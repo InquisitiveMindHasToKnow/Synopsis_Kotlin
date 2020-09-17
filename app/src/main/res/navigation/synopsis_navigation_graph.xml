@@ -1,10 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto" android:id="@+id/synopsis_navigation_graph"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/synopsis_navigation_graph"
     app:startDestination="@id/homePageFragment">
 
     <fragment
         android:id="@+id/homePageFragment"
         android:name="org.ohmstheresistance.synopsiskotlin.fragments.HomePageFragment"
-        android:label="HomePageFragment" />
+        android:label="HomePageFragment" >
+        <action
+            android:id="@+id/action_homePageFragment_to_projectsFragment"
+            app:destination="@id/projectsFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_resumeFragment"
+            app:destination="@id/resumeFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_aboutMeFragment"
+            app:destination="@id/aboutMeFragment" />
+        <action
+            android:id="@+id/action_homePageFragment_to_contactMeFragment"
+            app:destination="@id/contactMeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/aboutMeFragment"
+        android:name="org.ohmstheresistance.synopsiskotlin.fragments.AboutMeFragment"
+        android:label="AboutMeFragment" />
+    <fragment
+        android:id="@+id/projectsFragment"
+        android:name="org.ohmstheresistance.synopsiskotlin.fragments.ProjectsFragment"
+        android:label="projects_fragment"
+        tools:layout="@layout/projects_fragment" />
+    <fragment
+        android:id="@+id/resumeFragment"
+        android:name="org.ohmstheresistance.synopsiskotlin.fragments.ResumeFragment"
+        android:label="resume_fragment"
+        tools:layout="@layout/resume_fragment" />
+    <fragment
+        android:id="@+id/contactMeFragment"
+        android:name="org.ohmstheresistance.synopsiskotlin.fragments.ContactMeFragment"
+        android:label="ContactMeFragment" />
 </navigation>
