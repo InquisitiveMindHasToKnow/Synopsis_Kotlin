@@ -1,14 +1,319 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".fragments.ResumeFragment">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:background="@color/mainBackgroundColor">
 
-</FrameLayout>
+        <View
+            android:layout_width="412dp"
+            android:layout_height="160dp"
+            android:background="@color/mainViewColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="160dp"
+                android:gravity="center"
+                android:text="Resume"
+                android:textColor="@color/textColor"
+                android:textSize="56sp" />
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:scrollbars="none"
+                >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/resume_skills_header_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="16dp"
+                        android:textSize="24sp"
+                        android:text="Skills"
+                        android:gravity="center_horizontal"
+                        android:textStyle="bold"
+                        android:textColor="@color/textColor"/>
+
+                    <View style="@style/Divider"/>
+
+                    <LinearLayout
+                        android:id="@+id/resume_four_star_rating_linear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:background="@color/mainViewColor"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:background="@drawable/ratingbot"/>
+
+
+                        <ImageView
+                            android:id="@+id/contact_me_gmail_button"
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/ratingbot"
+                            />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/ratingbot"/>
+
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/ratingbot"
+                            />
+
+                    </LinearLayout>
+
+                    <View style="@style/Divider"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="Demonstrable knowledge of: "
+                        android:textColor="@color/textColor"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:text="• Android, Java and XML"
+                        android:textColor="@color/textColor"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:text="• How applications interact with with RESTful APIs via JSON "
+                        android:textColor="@color/textColor"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="• Creating and testing applications on the latest android devices "
+                        android:textColor="@color/textColor"/>
+
+
+                    <View style="@style/Divider"/>
+
+                    <LinearLayout
+                        android:id="@+id/resume_three_star_rating_linear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:background="@color/mainViewColor"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:background="@drawable/ratingbot"/>
+
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/ratingbot"
+                            />
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/ratingbot"/>
+
+                    </LinearLayout>
+                    <View style="@style/Divider"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:gravity="center_horizontal"
+                        android:layout_marginTop="8dp"
+                        android:text="Strong knowledge of: "
+                        android:textColor="@color/textColor"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:text="• Using Git/Github to store project code remotely."
+                        android:textColor="@color/textColor"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="• Using databases such as SQLite and Room to store data locally on devices."
+                        android:textColor="@color/textColor"/>
+
+
+                    <View style="@style/Divider"/>
+                    <LinearLayout
+                        android:id="@+id/resume_two_star_rating_linear"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_horizontal"
+                        android:background="@color/mainViewColor"
+                        android:layout_marginTop="4dp"
+                        android:layout_marginBottom="4dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:background="@drawable/ratingbot"/>
+
+
+                        <ImageView
+                            android:layout_width="8dp"
+                            android:layout_height="16dp"
+                            android:layout_marginStart="8dp"
+                            android:background="@drawable/halfratingbot"
+                            />
+
+                    </LinearLayout>
+
+                    <View style="@style/Divider"/>
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_horizontal"
+                        android:text="Currently Learning: "
+                        android:textColor="@color/textColor"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:text="• Kotlin - Slowly but surely migrating personal projects to Kotlin to put everything I learn into practice. "
+                        android:textColor="@color/textColor"/>
+
+
+                    <TextView
+                        android:id="@+id/resume_experience_header_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:textSize="24sp"
+                        android:gravity="center_horizontal"
+                        android:text="Experience"
+                        android:textStyle="bold"
+                        android:textColor="@color/textColor"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColor"
+                        android:text="Android Development Fellow"
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/textColor"
+                        android:textSize="16sp"
+                        android:text="Pursuit - Long Island City, NY"
+
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:textColor="@color/textColor"
+                        android:text="Sept 2018 - Present"
+                        />
+
+
+                    <TextView
+                        android:id="@+id/pursuit_experience_textview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/textColor"
+                        android:text="• Enrolled in an intensive 10-month, Google-funded software engineering fellowship with a 9% acceptance rate."
+                        />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:text="• Gained hands-on experience with Java, Android SDK, REST APIs, Git, Data Structures, Algorithms, and tech principles and culture "
+                        android:textColor="@color/textColor"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="16sp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="16dp"
+                        android:text="• Worked on team/individual projects, code reviews, and pair programming."
+                        android:textColor="@color/textColor"/>
+                </LinearLayout>
+
+            </ScrollView>
+        </LinearLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
