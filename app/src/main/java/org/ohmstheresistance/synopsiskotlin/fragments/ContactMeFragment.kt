@@ -1,60 +1,110 @@
 package org.ohmstheresistance.synopsiskotlin.fragments
 
+import android.content.ActivityNotFoundException
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import androidx.fragment.app.Fragment
+import android.os.Handler
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
+import android.widget.Toast
+import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
+import kotlinx.android.synthetic.main.contact_me_fragment.*
 import org.ohmstheresistance.synopsiskotlin.R
+import org.ohmstheresistance.synopsiskotlin.databinding.ContactMeFragmentBinding
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class ContactMeFragment : Fragment(), View.OnClickListener {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [ContactMeFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class ContactMeFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    lateinit var contactIntent: Intent
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+
+        activity?.overridePendingTransition(0, R.anim.slide_out_right)
+
+        val contactMeBinding = DataBindingUtil.inflate<ContactMeFragmentBinding>(
+            inflater,
+            R.layout.contact_me_fragment,
+            container,
+            false
+        )
+
+        contactMeBinding.contactMePhoneCallButton.setOnClickListener(this)
+        contactMeBinding.contactMeGmailButton.setOnClickListener(this)
+        contactMeBinding.contactMeGithubButton.setOnClickListener(this)
+        contactMeBinding.contactMeLinkedInButton.setOnClickListener(this)
+
+
+        contactMeBinding.waysToContactLinear.startAnimation(
+            AnimationUtils.loadAnimation(context, R.anim.slide_in_bottom))
+
+        contactMeBinding.contactMeAndroidRobot.startAnimation(
+            AnimationUtils.loadAnimation(context, R.anim.slide_in_bottom))
+
+        Handler().postDelayed({
+            contactMeBinding.contactMeAndroidRobot.startAnimation(
+                AnimationUtils.loadAnimation(context, R.anim.exit_bottom))
+        }, 3000)
+
+
+        return contactMeBinding.root
+
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.contact_me_fragment, container, false)
-    }
+    override fun onClick(view: View?) {
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment ContactMeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            ContactMeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+        when (view?.id) {
+
+            contact_me_phone_call_button.id -> {
+
+                val numberToCall = "973-289-2836"
+
+                contactIntent = Intent(Intent.ACTION_DIAL)
+                contactIntent.data = Uri.parse("tel:$numberToCall")
+                startActivity(contactIntent)
+
+                activity?.overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit)
             }
+
+            contact_me_gmail_button.id -> {
+
+                contactIntent = Intent(Intent.ACTION_SEND)
+                contactIntent.type = "message/rfc822"
+                contactIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf("raymondomardev@gmail.com"))
+                contactIntent.putExtra(Intent.EXTRA_SUBJECT, "Hello, Omar!")
+
+                try {
+                    startActivity(Intent.createChooser(contactIntent, "Email me"))
+                } catch (ex: ActivityNotFoundException) {
+                    Toast.makeText(
+                        context,
+                        "There are no email clients installed.",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                }
+                activity?.overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit)
+            }
+
+            contact_me_github_button.id -> {
+
+                val githubURL = "https://github.com/InquisitiveMindHasToKnow"
+
+                contactIntent = Intent(Intent.ACTION_VIEW, Uri.parse(githubURL))
+                startActivity(contactIntent)
+                activity?.overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit)
+            }
+
+            contact_me_linked_in_button.id -> {
+
+                val linkedInURL = "https://www.linkedin.com/in/omarraymond"
+
+                contactIntent = Intent(Intent.ACTION_VIEW, Uri.parse(linkedInURL))
+                startActivity(contactIntent)
+                activity?.overridePendingTransition(R.anim.zoom_enter, R.anim.zoom_exit)
+
+            }
+        }
     }
 }
