@@ -14,21 +14,21 @@ import org.ohmstheresistance.synopsiskotlin.databinding.HomePageFragmentBinding
 
 class HomePageFragment : Fragment(), View.OnClickListener {
 
-    lateinit var binding: HomePageFragmentBinding //ViewDataBinding
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, R.layout.home_page_fragment, container, false)
 
-        binding.profileAboutMeButton.setOnClickListener(this)
-        binding.profileContactMeButton.setOnClickListener(this)
-        binding.profileProjectsButton.setOnClickListener(this)
-        binding.profileResumeButton.setOnClickListener(this)
+      val homePageBinding = DataBindingUtil.inflate<HomePageFragmentBinding>(inflater, R.layout.home_page_fragment, container, false)
 
-        return binding.root
+        homePageBinding.profileAboutMeButton.setOnClickListener(this)
+        homePageBinding.profileContactMeButton.setOnClickListener(this)
+        homePageBinding.profileProjectsButton.setOnClickListener(this)
+        homePageBinding.profileResumeButton.setOnClickListener(this)
+
+        return homePageBinding.root
     }
 
     override fun onClick(view: View?) {
