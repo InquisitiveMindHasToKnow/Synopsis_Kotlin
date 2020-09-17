@@ -33,8 +33,7 @@ class HomePageFragment : Fragment(), View.OnClickListener {
 
     override fun onClick(view: View?) {
 
-        val id: Int? = view?.id
-        when (id) {
+        when (view?.id) {
 
             profile_about_me_button.id -> {
                 findNavController().navigate(HomePageFragmentDirections.actionHomePageFragmentToAboutMeFragment())
