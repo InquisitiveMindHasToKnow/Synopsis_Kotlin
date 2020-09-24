@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainBackgroundColor"
+        tools:context=".fragments.KnowYourWorldFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/know_your_world_imageview"
+                    android:layout_width="104dp"
+                    android:layout_height="104dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center_horizontal"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:src="@drawable/kywiamge"/>
+
+
+                <TextView
+                    android:id="@+id/know_your_world_description_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/textColor"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/know_your_world_imageview"
+                    android:text="Have you ever been involved in a conversation with someone and realized geography is not your strong suit? I have, and Know Your World was my solution. \n\nKnow Your World is the ultimate geographical application to help anyone who is lacking in knowledge of the different countries around the world learn about them in minutes! \n\n Not only do users have the ability to study and learn about the countries of the world, they have the ability to save their favorite countries and if, by chance, they’re up for a challenge, there’s a quiz they could take to test their knowledge of how much they learned. \n\n SQLite Database, Retrofit 2, RecyclerView, Text to speech are among the many libraries utilized in the application. "/>
+
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="32dp"
+                        android:padding="10dp" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" >
+
+
+                            <ImageView
+                                android:id="@+id/kyw_main_page_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/kyw_main_page_image"/>
+
+                            <ImageView
+                                android:id="@+id/kyw_study_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/kyw_study_image"/>
+
+                            <ImageView
+                                android:id="@+id/kyw_selected_country_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="16dp"
+                                android:src="@drawable/kyw_selected_country_image" />
+
+                            <ImageView
+                                android:id="@+id/kyw_quiz_mainpage_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/kyw_quiz_main_page"/>
+
+                            <ImageView
+                                android:id="@+id/kyw_quiz_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/kyw_quiz_image"/>
+
+                            <ImageView
+                                android:id="@+id/kyw_favorite_countries_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/kyw_favorite_image"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <Button
+                    android:id="@+id/know_your_world_link_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:background="@drawable/roundedbuttons"
+                    android:textColor="@color/textColor"
+                    android:layout_marginBottom="24dp"
+                    android:text="Source Code"
+                    />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
