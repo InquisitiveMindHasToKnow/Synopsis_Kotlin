@@ -7,21 +7,20 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import org.ohmstheresistance.synopsiskotlin.R
-import org.ohmstheresistance.synopsiskotlin.databinding.EssentialFactsFragmentBinding
+import org.ohmstheresistance.synopsiskotlin.databinding.MastermindFragmentBinding
 
-class EssentialFactsFragment : Fragment(), View.OnClickListener {
+
+class MastermindFragment : Fragment(), View.OnClickListener {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        val essentialFactsBinding = DataBindingUtil.inflate<EssentialFactsFragmentBinding>(inflater, R.layout.essential_facts_fragment, container, false)
+
+        val mastermindBinding = DataBindingUtil.inflate<MastermindFragmentBinding>(inflater, R.layout.mastermind_fragment, container, false)
 
 
-        return essentialFactsBinding.root
-
-
+        return mastermindBinding.root
     }
 
     override fun onClick(view: View?) {

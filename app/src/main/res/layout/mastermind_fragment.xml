@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainBackgroundColor"
+        tools:context=".fragments.MastermindFragment">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/mastermind_imageview"
+                    android:layout_width="104dp"
+                    android:layout_height="104dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="center_horizontal"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:src="@drawable/mastermind"/>
+
+
+                <TextView
+                    android:id="@+id/mastermind_description_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/textColor"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="By far the most fun you'll have guessing a 4-digit combination! \n\n To start off, you are given 10 attempts and 5 minutes to guess the correct combination randomly selected by the computer at the beginning of the game (numbers between 0 and 7 with duplicates being permitted).\n\nFor every incorrect guess, Bart's support system falls apart one brick at at time. If guesses and/or time runs out, Bart's support system will fall apart completely and he will fall into the water below. It is your job to stop that from happening!"
+                    app:layout_constraintTop_toBottomOf="@id/mastermind_imageview"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="32dp"
+                        android:padding="10dp" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" >
+
+
+                            <ImageView
+                                android:id="@+id/mastermind_main_page_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/mastermind_main_page"/>
+
+                            <ImageView
+                                android:id="@+id/mastermind_instructions_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/master_mind_instructions"/>
+
+                            <ImageView
+                                android:id="@+id/mastermind_game_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="16dp"
+                                android:src="@drawable/mastermind_game" />
+
+                            <ImageView
+                                android:id="@+id/mastermind_winner_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/mastermind_winner"/>
+
+                            <ImageView
+                                android:id="@+id/mastermind_loser_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/mastermind_loser"/>
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <Button
+                    android:id="@+id/mastermind_link_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:background="@drawable/roundedbuttons"
+                    android:textColor="@color/textColor"
+                    android:layout_marginBottom="24dp"
+                    android:text="Source Code"
+                    />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
