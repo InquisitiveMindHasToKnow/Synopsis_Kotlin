@@ -38,7 +38,7 @@ class ProjectsFragment : Fragment() {
         projectsViewPagerAdapter?.addFragments(AndroidTriviaFragment(), "Android Trivia")
         projectsViewPagerAdapter?.addFragments(CupidShuffleFragment(), "Cupid Shuffle")
         projectsViewPagerAdapter?.addFragments(CeeLoFragment(), "CeeLo")
-//        projectsViewPagerAdapter.addFragments(TributeFragment(), "Tribute")
+        projectsViewPagerAdapter?.addFragments(TributeFragment(), "Tribute")
         viewPager?.adapter = projectsViewPagerAdapter
     }
 

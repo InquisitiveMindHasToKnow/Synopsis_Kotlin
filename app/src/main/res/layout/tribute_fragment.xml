@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainBackgroundColor"
+        tools:context=".fragments.TributeFragment">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:id="@+id/tribute_imageview"
+                    android:layout_width="104dp"
+                    android:layout_height="104dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/tributeimage"/>
+
+
+                <TextView
+                    android:id="@+id/tribute_description_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/textColor"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Take a step back, imagine yourself in your favorite class taking notes and trying to focus on the lecture as you’re genuinely interesting in learning the subject matter. \n\nNow imagine that focus constantly being broken by your instructor calling on you, on multiple occasions to demonstrate how to solve certain problems in front of the class. Yep, that’s what happened to me, and what led to Tribute being created. \n\nTribute selects a name from a pool of names at random and removes it from the pool once it’s been picked just once. My instructor was now afforded the opportunity to either use the pre-made list of names or create his own to choose from. \n\nRoom Database, RxJava, Shared Preferences, and  Retrotfit 2  are among the many libraries utilized in the making of this application."/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="32dp"
+                        android:padding="10dp" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" >
+
+
+                            <ImageView
+                                android:id="@+id/tribute_signin_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/tribute_signin_page"/>
+
+                            <ImageView
+                                android:id="@+id/tribute_registration_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/tribute_registration_page"/>
+
+                            <ImageView
+                                android:id="@+id/tribute_main_page_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="16dp"
+                                android:src="@drawable/tribute_main_page" />
+
+                            <ImageView
+                                android:id="@+id/tribute_stock_names_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/tribute_stock_names"/>
+
+                            <ImageView
+                                android:id="@+id/tribute_selected_person_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/tribute_random_peerson_picked"/>
+
+                            <ImageView
+                                android:id="@+id/tribute_added_person_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/tribute_added_name"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <Button
+                    android:id="@+id/tribute_link_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:background="@drawable/roundedbuttons"
+                    android:textColor="@color/textColor"
+                    android:layout_marginBottom="24dp"
+                    android:text="Source Code"
+                    />
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
