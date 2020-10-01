@@ -35,7 +35,7 @@ class ProjectsFragment : Fragment() {
         projectsViewPagerAdapter?.addFragments(EssentialFactsFragment(), "Essential Facts")
         projectsViewPagerAdapter?.addFragments(MastermindFragment(), "Mastermind")
         projectsViewPagerAdapter?.addFragments(KnowYourWorldFragment(), "Know Your World")
-//        projectsViewPagerAdapter.addFragments(AndroidTriviaFragment(), "Android Trivia")
+        projectsViewPagerAdapter?.addFragments(AndroidTriviaFragment(), "Android Trivia")
 //        projectsViewPagerAdapter.addFragments(CupidShuffleFragment(), "Cupid Shuffle")
 //        projectsViewPagerAdapter.addFragments(CeeLoFragment(), "CeeLo")
 //        projectsViewPagerAdapter.addFragments(TributeFragment(), "Tribute")

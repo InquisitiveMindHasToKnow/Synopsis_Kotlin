@@ -7,21 +7,23 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import org.ohmstheresistance.synopsiskotlin.R
-import org.ohmstheresistance.synopsiskotlin.databinding.KnowYourWorldFragmentBinding
+import org.ohmstheresistance.synopsiskotlin.databinding.AndroidTriviaFragmentBinding
 
-class KnowYourWorldFragment : Fragment(), View.OnClickListener {
+class AndroidTriviaFragment : Fragment(), View.OnClickListener  {
+
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val knowYourWorldBinding = DataBindingUtil.inflate<KnowYourWorldFragmentBinding>(inflater, R.layout.know_your_world_fragment, container, false)
+
+        val androidTriviaBinding = DataBindingUtil.inflate<AndroidTriviaFragmentBinding>(inflater, R.layout.android_trivia_fragment, container, false)
 
 
-        return knowYourWorldBinding.root
+        return androidTriviaBinding.root
     }
 
-    override fun onClick(p0: View?) {
-        TODO("Not yet implemented")
+    override fun onClick(view: View?) {
+
     }
 }
