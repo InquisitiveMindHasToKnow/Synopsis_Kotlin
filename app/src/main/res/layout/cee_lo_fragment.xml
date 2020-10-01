@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainBackgroundColor"
+        tools:context=".fragments.CeeLoFragment">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/ceelo_imageview"
+                    android:layout_width="104dp"
+                    android:layout_height="104dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_gravity="center_horizontal"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:src="@drawable/ceelo"/>
+
+
+                <TextView
+                    android:id="@+id/mastermind_description_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:text="Ahhh, CeeLo. The very first Kotlin centric application I created. It's pretty simple, honestly, but I think its simplicity makes it that much better. \n\nBased on the game almost everyone played as a child, it uses three dice that when rolled decides whether the player wins or loses after each turn. \n\n That's it, really. It's pretty fun and I'd be remiss if I did not mention how easily it can bring out your competitive nature!"
+                    android:textColor="@color/textColor"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:layout_constraintTop_toBottomOf="@id/ceelo_imageview"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="32dp"
+                        android:padding="10dp" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" >
+
+
+                            <ImageView
+                                android:id="@+id/ceelo_instructions_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/ceelo_instructions"/>
+
+                            <ImageView
+                                android:id="@+id/ceelo_roller_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/ceelo_dice_roller"/>
+
+
+
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <Button
+                    android:id="@+id/ceelo_link_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:background="@drawable/roundedbuttons"
+                    android:textColor="@color/textColor"
+                    android:layout_marginBottom="24dp"
+                    android:text="Source Code"
+                    />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
