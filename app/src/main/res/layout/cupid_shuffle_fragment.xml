@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/mainBackgroundColor"
+        tools:context=".fragments.CupidShuffleFragment">
+
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/cupid_shuffle_imageview"
+                    android:layout_width="104dp"
+                    android:layout_height="104dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_gravity="center_horizontal"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintLeft_toLeftOf="parent"
+                    app:layout_constraintRight_toRightOf="parent"
+                    android:src="@drawable/csimage"/>
+
+
+                <TextView
+                    android:id="@+id/cupid_shuffle_description_textview"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textSize="16sp"
+                    android:textColor="@color/textColor"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="Now we’re all familiar with the many dating applications out there, whether it’s Tinder, OKCupid, Bumble, Happn, just to name a few. Although they’re all good in their own ways, Cupid Shuffle takes what they all do well but goes a step further. Cupid Shuffle not only helps users find their perfect matches, it gives them the ability to select a date and time for their potential outings. Game changer! \n\n Gone are the days of:  \n\nQuestion: “What do you want to do?” \n Response: “I don’t know. What do you want to do?” \n\n  Found a match? Pick from an assortment of date locations based on similar interests, pick a date and time, and you're on your way!  "
+                    app:layout_constraintTop_toBottomOf="@id/cupid_shuffle_imageview"/>
+
+                <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scrollbars="none">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="32dp"
+                        android:padding="10dp" >
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" >
+
+
+                            <ImageView
+                                android:id="@+id/cs_login_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/cs_login_screen"/>
+
+                            <ImageView
+                                android:id="@+id/cs_main_user_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/cs_main_user"/>
+
+                            <ImageView
+                                android:id="@+id/cs_potential_match_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="16dp"
+                                android:src="@drawable/cs_potential_match" />
+
+                            <ImageView
+                                android:id="@+id/cs_list_of_locations"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/cs_list_of_locations"/>
+
+                            <ImageView
+                                android:id="@+id/cs_date_reservation_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/cs_date_reservation"/>
+
+                            <ImageView
+                                android:id="@+id/cs_date_prompt_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/cs_date_prompt"/>
+
+                            <ImageView
+                                android:id="@+id/cs_direct_messages_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/cs_direct_messages"/>
+
+                            <ImageView
+                                android:id="@+id/cs_connection_requests_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/cs_connection_requests"/>
+
+                            <ImageView
+                                android:id="@+id/cs_date_reservation_confirmation_imageview"
+                                android:layout_width="104dp"
+                                android:layout_height="104dp"
+                                android:layout_marginTop="16dp"
+                                android:layout_gravity="center_horizontal"
+                                android:src="@drawable/cs_reservation_confirmation"/>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </HorizontalScrollView>
+
+                <Button
+                    android:id="@+id/cupid_shuffle_link_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center_horizontal"
+                    android:textSize="16sp"
+                    android:textAllCaps="false"
+                    android:paddingStart="16dp"
+                    android:paddingEnd="16dp"
+                    android:background="@drawable/roundedbuttons"
+                    android:textColor="@color/textColor"
+                    android:layout_marginBottom="24dp"
+                    android:text="Source Code"
+                    />
+
+            </LinearLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</layout>
