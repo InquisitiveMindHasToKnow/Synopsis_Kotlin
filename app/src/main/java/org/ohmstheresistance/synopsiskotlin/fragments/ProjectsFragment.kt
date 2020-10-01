@@ -37,10 +37,9 @@ class ProjectsFragment : Fragment() {
         projectsViewPagerAdapter?.addFragments(KnowYourWorldFragment(), "Know Your World")
         projectsViewPagerAdapter?.addFragments(AndroidTriviaFragment(), "Android Trivia")
         projectsViewPagerAdapter?.addFragments(CupidShuffleFragment(), "Cupid Shuffle")
-//        projectsViewPagerAdapter.addFragments(CeeLoFragment(), "CeeLo")
-//        projectsViewPagerAdapter.addFragments(TributeFragment(), "Tribute")
+        projectsViewPagerAdapter?.addFragments(CeeLoFragment(), "CeeLo")
+        projectsViewPagerAdapter?.addFragments(TributeFragment(), "Tribute")
         viewPager?.adapter = projectsViewPagerAdapter
-        //viewPager.setPageTransformer(true, CubeOutTransformer())
     }
 
     }
