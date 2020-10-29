@@ -19,9 +19,11 @@ import org.ohmstheresistance.synopsiskotlin.databinding.ContactMeFragmentBinding
 class ContactMeFragment : Fragment(), View.OnClickListener {
 
     lateinit var contactIntent: Intent
+    lateinit var animationHandler: Handler
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
 
+        animationHandler = Handler()
         activity?.overridePendingTransition(0, R.anim.slide_out_right)
 
         val contactMeBinding = DataBindingUtil.inflate<ContactMeFragmentBinding>(
@@ -43,7 +45,7 @@ class ContactMeFragment : Fragment(), View.OnClickListener {
         contactMeBinding.contactMeAndroidRobot.startAnimation(
             AnimationUtils.loadAnimation(context, R.anim.slide_in_bottom))
 
-        Handler().postDelayed({
+        animationHandler.postDelayed({
             contactMeBinding.contactMeAndroidRobot.startAnimation(
                 AnimationUtils.loadAnimation(context, R.anim.exit_bottom))
         }, 3000)
@@ -106,5 +108,10 @@ class ContactMeFragment : Fragment(), View.OnClickListener {
 
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        animationHandler.removeCallbacksAndMessages(null)
     }
 }
