@@ -55,8 +55,8 @@ class EssentialFactsFragment : Fragment(), View.OnClickListener {
         when (view?.id) {
 
             ef_link_button.id -> {
-                val linkedInURL = "https://github.com/InquisitiveMindHasToKnow/EssentialFacts"
-                val essentialFactsLinkIntent = Intent(Intent.ACTION_VIEW, Uri.parse(linkedInURL))
+                val essentialFactsURL = "https://github.com/InquisitiveMindHasToKnow/EssentialFacts"
+                val essentialFactsLinkIntent = Intent(Intent.ACTION_VIEW, Uri.parse(essentialFactsURL))
                 startActivity(essentialFactsLinkIntent)
             }
             ef_link_to_survey_textview.id -> {
