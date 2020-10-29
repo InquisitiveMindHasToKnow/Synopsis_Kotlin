@@ -94,7 +94,7 @@
                                 android:layout_height="104dp"
                                 android:layout_marginTop="16dp"
                                 android:layout_gravity="center_horizontal"
-                                android:src="@drawable/tribute_random_peerson_picked"/>
+                                android:src="@drawable/tribute_selected_person"/>
 
                             <ImageView
                                 android:id="@+id/tribute_added_person_imageview"
