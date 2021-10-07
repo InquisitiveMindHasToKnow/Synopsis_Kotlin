@@ -8,17 +8,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
+import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import kotlinx.android.synthetic.main.essential_facts_fragment.*
 import org.ohmstheresistance.synopsiskotlin.R
 import org.ohmstheresistance.synopsiskotlin.databinding.EssentialFactsFragmentBinding
 
+
 class EssentialFactsFragment : Fragment(), View.OnClickListener {
 
     private lateinit var imageAlertDialog: AlertDialog.Builder
     private lateinit var zoomedImageLayout: View
-    private lateinit var zoomedSelectedImage: ImageView
+    private lateinit var clickedImage: ImageView
 
 
     override fun onCreateView(
@@ -44,8 +46,12 @@ class EssentialFactsFragment : Fragment(), View.OnClickListener {
         essentialFactsBinding.essentialFactsImageview.setOnClickListener(this)
 
         imageAlertDialog = AlertDialog.Builder(activity, R.style.DialogCustom)
-        zoomedImageLayout = inflater.inflate(R.layout.display_zoomed_image_fragment, container, false)
-        zoomedSelectedImage = zoomedImageLayout.findViewById(R.id.zoomed_in_image_imageview)
+        zoomedImageLayout = inflater.inflate(
+            R.layout.display_zoomed_image_fragment,
+            container,
+            false
+        )
+        clickedImage = zoomedImageLayout.findViewById(R.id.zoomed_in_image_imageview)
 
         return essentialFactsBinding.root
     }
@@ -56,7 +62,11 @@ class EssentialFactsFragment : Fragment(), View.OnClickListener {
 
             ef_link_button.id -> {
                 val essentialFactsURL = "https://github.com/InquisitiveMindHasToKnow/EssentialFacts"
-                val essentialFactsLinkIntent = Intent(Intent.ACTION_VIEW, Uri.parse(essentialFactsURL))
+                val essentialFactsLinkIntent = Intent(
+                    Intent.ACTION_VIEW, Uri.parse(
+                        essentialFactsURL
+                    )
+                )
                 startActivity(essentialFactsLinkIntent)
             }
             ef_link_to_survey_textview.id -> {
@@ -68,10 +78,13 @@ class EssentialFactsFragment : Fragment(), View.OnClickListener {
             }
 
             ef_main_page_imageview.id -> {
-                setZoomedImage(R.drawable.essential_facts_main_page)
+//                setZoomedImage(R.drawable.essential_facts_main_page)
+                newWayToZoom(ef_main_page_imageview)
+
             }
             ef_about_imageview.id -> {
-                setZoomedImage(R.drawable.essential_facts_about)
+//                setZoomedImage(R.drawable.essential_facts_about)
+                newWayToZoom(ef_about_imageview)
             }
             ef_rules_imageview.id -> {
                 setZoomedImage(R.drawable.essential_facts_rules)
@@ -91,12 +104,18 @@ class EssentialFactsFragment : Fragment(), View.OnClickListener {
     private fun setZoomedImage(drawable: Int) {
        val layoutParent = zoomedImageLayout.parent as? ViewGroup
 
-        if (zoomedSelectedImage != null) {
+        if (clickedImage != null) {
             layoutParent?.removeView(zoomedImageLayout)
         }
         imageAlertDialog.setView(zoomedImageLayout)
-        zoomedSelectedImage.setImageResource(drawable)
+        clickedImage.setImageResource(drawable)
         imageAlertDialog.show()
+    }
+
+    private fun newWayToZoom (clickedImage: ImageView){
+        val params: LinearLayout.LayoutParams = LinearLayout.LayoutParams(600, 1200)
+        clickedImage.layoutParams = params
+
     }
 }
 
